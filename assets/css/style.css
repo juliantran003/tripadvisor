@@ -179,12 +179,15 @@ header button {
 /* Description */
 
 .description {
+  box-sizing: border-box;
   display: flex;
   margin-top: 40px;
+  margin-bottom: 80px;
   height: 460px;
 }
 
 .description .col1 {
+  box-sizing: border-box;
   height: 100%;
   flex: 1;
   padding-right: 120px;
@@ -198,6 +201,7 @@ header button {
 }
 
 .description .col2 {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -206,25 +210,19 @@ header button {
   border: none;
   height: 100%;
   width: 460px;
+  overflow: hidden;
 }
 
 .description .col2 .top {
   padding: 34px;
+  box-sizing: border-box;
 }
 
 .description .col2 .bottom {
+  box-sizing: border-box;
   height: 100%;
-}
-
-.description .col2 .bottom img {
   width: 100%;
-  height: 100%;
-
-  border: none;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  object-fit: cover;
-  overflow: hidden;
+  background-image: url(../img/map.png);
 }
 
 .description .col2 button {
@@ -248,75 +246,69 @@ header button {
 
 /* Immanquables */
 
-.immanquables-title {
-  margin-top: 120px;
-  margin-bottom: 40px;
-}
-
-.immanquables {
-  /* border: solid black 2px; */
-  box-sizing: border-box;
+.immanquables-sub {
+  margin-top: 30px;
+  margin-bottom: 50px;
   display: flex;
-  flex-direction: column;
-  margin-top: 18px;
-  width: 100%;
-  height: 1150px;
-  position: relative;
-}
-
-.immanquables .section {
   box-sizing: border-box;
-  /* border: solid yellow 2px; */
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  width: 100%;
-  flex: 1;
+
+  width: auto;
+  height: 345px;
+}
+.immanquables-sub a {
+  color: black;
+  text-decoration: none;
 }
 
-.immanquables .section div {
-  /* border: solid pink 2px; */
-  width: 100%;
-  flex: 1;
-}
-
-.immanquables .section .text {
-  margin-right: 30px;
-}
-
-.immanquables .section .text p {
-  margin-top: 20px;
-  margin-bottom: 20px;
+.immanquables-sub .col1 p {
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 18px;
+  margin: 15px 0;
 }
 
-.immanquables .section div a {
-  font-weight: bold;
+.immanquables-sub .col1 {
+  box-sizing: border-box;
+
+  flex: 1;
+  height: auto;
+  padding-right: 15px;
 }
-.immanquables .section .items {
-  padding-left: 15px;
+
+.immanquables-sub .col2 {
   display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
+
+  flex: 3;
+  height: auto;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+.immanquables-sub .col2 > div {
+  display: flex;
   position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  width: calc(100% / 3 - (40px / 3));
+  flex-shrink: 0;
+  height: auto;
 }
 
-.immanquables .section img {
-  object-fit: cover;
-  display: block;
-  height: 50%;
+.immanquables-sub .col2 img {
+  margin-bottom: 10px;
   width: 100%;
-  margin-bottom: 14px;
+  height: 60%;
+  object-fit: cover;
 }
 
-.immanquables .section i {
+.immanquables-sub .col2 p {
+  font-size: 14px;
+  line-height: 16px;
+}
+#rating {
   color: green;
   font-size: 30px;
-}
-
-.immanquables .section .items p {
-  font-family: inherit;
-  font-size: 14px;
+  margin: 2px 0;
 }
 
 #like {
@@ -325,11 +317,21 @@ header button {
   border-radius: 50%;
   color: black;
   background-color: white;
-  left: 240px;
+  left: 220px;
   top: 10px;
   position: absolute;
 }
 
+#rating-logo {
+  width: 33px;
+  height: 33px;
+  left: 10px;
+  top: 145px;
+  position: absolute;
+}
+.immanquables-sub .col2 > div:not(:last-child) {
+  margin-right: 20px;
+}
 /* Guides */
 
 .guide-title {
@@ -400,6 +402,17 @@ footer div img {
 @media (max-width: 1024px) {
   header > nav > div > span {
     display: none;
+  }
+  .description {
+    flex-direction: column;
+  }
+  .description .col1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .description .col2 {
+    width: 100%;
   }
 
   .menu {

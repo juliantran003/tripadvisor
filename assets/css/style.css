@@ -486,7 +486,7 @@ body form button {
     max-height: 20px;
   }
   .menu div {
-    min-width: calc(25% - (300px / 4));
+    min-width: calc(25% - (250px / 4));
   }
   .menu div:nth-child(7) {
     display: inherit;

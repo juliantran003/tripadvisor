@@ -413,6 +413,7 @@ footer div img {
 
   .description .col2 {
     width: 100%;
+    flex-direction: row;
   }
 
   .menu {

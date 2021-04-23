@@ -18,7 +18,7 @@ h1 {
   font-size: 50px;
   font-family: "Trip Sans Med";
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 h1 span {
   color: #ff5e5e;
@@ -69,7 +69,7 @@ header input {
   flex: 1;
   margin-left: 25px;
   margin-right: 200px;
-  height: 24px;
+  height: 28px;
   width: 340px;
   border-radius: 5px;
   border: solid 2px lightgrey;
@@ -121,18 +121,22 @@ header button {
 /* Menu */
 .menu {
   display: flex;
-  margin: 40px 0;
+  margin: 20px 0 30px 0;
 }
 
 .menu div {
   border: black 1px solid;
   flex: 1;
-  margin: 10px;
+
   padding: 20px;
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
-  line-height: 22px;
+  line-height: 20px;
+}
+
+.menu div:not(:nth-child(8)) {
+  margin-right: 10px;
 }
 
 .menu div:nth-child(7) {
@@ -148,7 +152,7 @@ header button {
 
 /* Pictures */
 .pictures {
-  margin-top: 60px;
+  margin-top: 10px;
   margin-bottom: 24px;
   height: 430px;
   display: flex;
@@ -486,12 +490,18 @@ body form button {
     max-height: 20px;
   }
   .menu div {
-    min-width: calc(25% - (250px / 4));
+    margin-bottom: 10px;
+    min-width: calc(25% - (220px / 4));
   }
   .menu div:nth-child(7) {
     display: inherit;
   }
-  .menu div:not(:nth-child(4n)) {
+
+  .menu div:not(:nth-child(8)) {
+    margin-right: 20px;
+  }
+
+  .menu div:not(:nth-child(4)) {
     margin-right: 20px;
   }
   .pictures {

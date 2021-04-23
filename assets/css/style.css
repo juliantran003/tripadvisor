@@ -1,5 +1,7 @@
 /* GLOBAL RULES */
-
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Trip Sans Reg";
 }
@@ -56,7 +58,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 header img {
@@ -65,10 +66,11 @@ header img {
 
 header input {
   display: block;
-  position: absolute;
+  flex: 1;
+  margin-left: 25px;
+  margin-right: 200px;
   height: 24px;
   width: 340px;
-  left: 220px;
   border-radius: 5px;
   border: solid 2px lightgrey;
 }
@@ -100,11 +102,15 @@ header > nav > i {
 }
 
 header button {
+  display: block;
   background-color: black;
   color: white;
   border: none;
   cursor: pointer;
   padding: 10px;
+  overflow: hidden;
+  min-width: 140px;
+  max-height: 36px;
   border-radius: 20px;
   font-family: inherit;
   font-size: 16px;
@@ -129,8 +135,8 @@ header button {
   line-height: 22px;
 }
 
-.menu div:not(:last-child) {
-  margin-right: 20px;
+.menu div:nth-child(7) {
+  display: none;
 }
 
 .menu span {
@@ -297,7 +303,7 @@ header button {
 .immanquables-sub .col2 img {
   margin-bottom: 10px;
   width: 100%;
-  height: 60%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -325,8 +331,8 @@ header button {
 #rating-logo {
   width: 33px;
   height: 33px;
-  left: 10px;
-  top: 145px;
+  left: 3%;
+  top: 57.5%;
   position: absolute;
 }
 .immanquables-sub .col2 > div:not(:last-child) {
@@ -343,7 +349,6 @@ header button {
   margin-top: 18px;
   display: flex;
 
-  width: 100%;
   height: 420px;
 }
 
@@ -390,6 +395,83 @@ footer div img {
   height: 20%;
 }
 
+/* Formulaire */
+
+.hidden {
+  display: none;
+}
+.display {
+  display: flex;
+}
+.formulaire {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  position: fixed;
+
+  display: flex;
+  justify-content: center;
+}
+
+body form > h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 30px 130px 30px 130px;
+}
+
+body form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 100px;
+  width: 500px;
+  height: 580px;
+  background-color: #e5e5e5;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+body form input,
+textarea {
+  padding: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  width: 320px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+body form textarea {
+  height: 200px;
+}
+
+body form button {
+  width: 320px;
+  height: 50px;
+  color: white;
+  margin-bottom: 20px;
+  background-color: #7359dc;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#cross {
+  position: absolute;
+  color: white;
+  font-size: 50px;
+  top: 3%;
+  left: 93%;
+}
+
 /* Responsive */
 
 @media (max-width: 1184px) {
@@ -397,9 +479,39 @@ footer div img {
     width: 100%;
     padding: 0 20px;
   }
+  .menu {
+    flex-wrap: wrap;
+  }
+  .menu span {
+    max-height: 20px;
+  }
+  .menu div {
+    min-width: calc(25% - (300px / 4));
+  }
+  .menu div:nth-child(7) {
+    display: inherit;
+  }
+  .menu div:not(:nth-child(4n)) {
+    margin-right: 20px;
+  }
+  .pictures {
+    height: 380px;
+  }
+  .pictures .col-2 {
+    width: 400px;
+  }
 }
 
 @media (max-width: 1024px) {
+  #like,
+  #rating-logo {
+    display: none;
+  }
+
+  .immanquables-sub .col1 {
+    margin-bottom: 10px;
+  }
+
   header > nav > div > span {
     display: none;
   }
@@ -409,6 +521,7 @@ footer div img {
   .description .col1 {
     width: 100%;
     margin-bottom: 20px;
+    padding-right: 0px;
   }
 
   .description .col2 {
@@ -416,23 +529,38 @@ footer div img {
     flex-direction: row;
   }
 
-  .menu {
-    flex-wrap: wrap;
-  }
-  .menu span {
-    max-height: 20px;
-  }
-  .menu div {
-    height: calc(100% / 2);
-  }
   header input {
-    width: 260px;
+    margin-right: 345px;
+  }
+  .pictures {
+    height: 280px;
+  }
+  .pictures .col-1 {
+    flex: 2;
+  }
+  .pictures .col-2 {
+    flex: 1;
   }
 }
 
 @media (max-width: 768px) {
   header input {
     display: none;
+  }
+  header img {
+    width: 130px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+  .menu {
+    flex-wrap: nowrap;
+    margin: 10px 0;
+  }
+
+  .menu div {
+    min-width: 146px;
   }
 
   header nav {
@@ -441,5 +569,38 @@ footer div img {
 
   .container > i {
     display: flex;
+  }
+
+  .pictures .col-2 {
+    display: none;
+  }
+  .pictures .col-1 {
+    margin: -20px;
+  }
+
+  .pictures {
+    margin-top: 30px;
+    margin-bottom: 24px;
+    height: 430px;
+    display: flex;
+  }
+
+  .path {
+    display: none;
+  }
+
+  .immanquables-sub {
+    /* margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    box-sizing: border-box;
+  
+    width: auto;
+    height: 345px; */
+    flex-direction: column;
+  }
+  .guide {
+    display: flex;
+    flex-wrap: nowrap;
   }
 }

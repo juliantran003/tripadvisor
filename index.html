@@ -10,13 +10,45 @@
     <link rel="stylesheet" href="./assets/css/fonts.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- FontAwesome -->
+    <script src="./assets/JS/main.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/fe9e3b2e41.js"
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
+    <!-- Formulaire -->
+
+    <section id="formulaire" class="hidden">
+      <div class="formulaire">
+        <i id="cross" class="fas fa-times"></i>
+        <form id="contactForm" action="">
+          <h1>Formulaire de contact</h1>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="Prénom"
+          />
+          <input type="text" name="lastName" id="lastName" placeholder="Nom" />
+          <input type="email" name="email" id="email" placeholder="Email" />
+          <input type="text" name="subject" id="subject" placeholder="Sujet" />
+          <textarea
+            type="text"
+            name="message"
+            id="message"
+            placeholder="Votre message ici..."
+          ></textarea>
+          <button type="submit">Envoyer le message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Header -->
+
     <header class="container">
       <i class="fas fa-bars"></i>
       <img src="./assets/img/logo.svg" alt="logo TripAdvisor" />
@@ -32,7 +64,7 @@
         <div><i class="far fa-bell"></i> <span>Alertes</span></div>
         <div><i class="far fa-heart"></i> <span>Favoris</span></div>
 
-        <button>Connectez-vous</button>
+        <button id="connect">Connectez-vous</button>
       </nav>
     </header>
 
@@ -49,6 +81,7 @@
         <div><span>Restaurants</span> <i class="fas fa-utensils"></i></div>
         <div><span>Forums de voyage</span> <i class="far fa-comments"></i></div>
         <div><span>Vols</span> <i class="fas fa-plane"></i></div>
+        <div><span>Croisières</span> <i class="fas fa-ship"></i></div>
         <div><span>Plus</span> <i class="fas fa-ellipsis-h"></i></div>
       </nav>
 
@@ -269,6 +302,7 @@
                 alt=""
               />
               <img src="./assets/img/eiffel.jpeg" alt="" />
+
               <h5>Tour Eiffel</h5>
               <i id="rating" class="fas fa-ellipsis-h"></i>
               <p>
@@ -559,7 +593,7 @@
 
       <!-- Guides -->
       <h2 class="guide-title">Guides de voyageurs</h2>
-      <section class="guide">
+      <section class="guide container">
         <div>
           <img src="./assets/img/skull.jpg" alt="" />
           <h5>Top 10 des choses à faire ou à voir dans le 14ème</h5>
